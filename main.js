@@ -109,6 +109,14 @@ function drawLives() {
   ctx.fillText('Lives: ' +lives, canvas.width-75, 20);
 }
 
+function drawEnd() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  ctx.font = '70px monospace';
+  ctx.fillStyle = 'yellow'
+  ctx.fillText('GAME OVER', canvas.width/2, canvas.height/2);
+  ctx.textAlign = 'center'
+}
+
 function drawBall() {
   ctx.beginPath();
   ctx.arc(x, y, ballRadius, 0, Math.PI*2);
@@ -155,9 +163,15 @@ function draw() {
     } else {
       lives--;
       if (!lives) {
-        alert("GAME OVER");
-        document.location.reload();
+        // alert("GAME OVER");
+        // document.location.reload();
+        // clearInterval(interval);  
         clearInterval(interval);  
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        ctx.font = '70px monospace';
+        ctx.fillStyle = 'yellow'
+        ctx.fillText('GAME OVER', canvas.width/8, canvas.height/2);
+        ctx.textAlign = 'center'
       } else {
         x = canvas.width/2;
         y = canvas.height/2;
