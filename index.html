@@ -16,13 +16,22 @@
     }
     body {
       background-color: slategrey;
+      display: flex;
+    }
+    #container{
+      height: 100vh;
+      width: 100vw;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     canvas {
       background: #111;
       display: block;
       margin: 10px auto;
     }
-    div {
+    #newGame {
       margin: 10px auto;
       display: block;
       width: 100px;
@@ -32,12 +41,18 @@
       line-height: 30px;
       border-style: solid;
     }
+    h1, #newGame {
+      /* border: 1px solid red;
+      position: absolute; */
+    }
   </style>
 </head>
 <body>
-  <h1>b r e a k o u t</h1>
-  <canvas id="myCanvas" width="480" height="320"></canvas>
-  <div onClick="document.location.reload()">new game</div>
+  <div id='container'>
+    <h1>b r e a k o u t</h1>
+    <canvas id="myCanvas" width="480" height="320"></canvas>
+    <div id='newGame' onClick="document.location.reload()">new game</div>
+  </div>
 </body>
 <script src="main.js"></script>
 </html>
